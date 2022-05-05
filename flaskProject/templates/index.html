@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wszystkie teksty | AEI_project</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="particle-container">
+	{% for i in range(0,40) %}
+	<div class="particle"></div>
+	{% endfor %}
+</div>
+<div class="main_container">
+    <div class="navbar">
+        <input type="checkbox" id="active">
+        <label for="active" class="menu-btn"><span></span></label>
+        <label for="active" class="close"></label>
+        <div class="wrapper">
+          <ul>
+            <li><a href="{{ url_for('default') }}">Główna</a></li>
+            <li><a href="{{ url_for('all_texts_info') }}">Teksty</a></li>
+            <li><a href="{{ url_for('roles') }}">Role</a></li>
+            <li><a href="{{ url_for('scales') }}">Oceny</a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="main_page_container">
+        <h1>PROJEKT ZALICZENIOWY NA PRZEDMIOT AUTOMATYCZNA EKSTRAKCJA INFORMACJI WYKONANY W PYTHONIE</h1>
+    </div>
+    <div class="floating_container">
+        <p>Korpus składa się ze 100 krótkich tekstów. <br>Pierwsze 50 z nich dotyczy "czytania". <br>Druga połowa nie jest związana z tematem</p>
+        <p>Reguły określają wynik (w przedziale 0-1) "bycia na temat" danego tekstu. <br>Wynik zależy od tego jakie role semantyczne pojawiły się w tekście</p>
+    </div>
+
+
+</div>
+</body>
+</html>
